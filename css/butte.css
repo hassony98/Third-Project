@@ -1952,7 +1952,15 @@ a {
   font-size: 50px;
   margin: 10px 0;
 }
-
+.our .our-content .items-content span {
+  transform: translateY(-45%);
+  color: var(--main-color);
+  position: absolute;
+  font-weight: 600;
+  font-size: 50px;
+  right: 24%;
+  top: 50%;
+}
 .our .our-content .items-content p {
   color: var(--main-color-alt);
   font-style: italic;
