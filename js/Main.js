@@ -128,6 +128,10 @@ window.onscroll = function () {
     main.forEach((el) => {
       el.style.width = "100%";
     });
+    if (!started) {
+      countspan.forEach((el) => startCount(el));
+    }
+    started = true;
     countspan.forEach((el) => {
       el.style.width = "50";
       el.style.opacity = "1";
