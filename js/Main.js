@@ -87,15 +87,15 @@ function startCount(el) {
     }
   }, 2000 / goal);
 }
-countspan.forEach((el) => {
+function startCount(el) {
   let targ = el.dataset.conty;
   let int = setInterval(() => {
     el.textContent++;
     if (el.textContent == targ) {
       clearInterval(int);
     }
-  }, 2000 / targ);
-});
+  }, 1500 / targ);
+}
 
 let height = document.body.scrollHeight - document.body.clientHeight;
 window.addEventListener("scroll", () => {
