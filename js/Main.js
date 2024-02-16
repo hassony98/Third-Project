@@ -1,22 +1,21 @@
-let numb = document.querySelectorAll(".items-content h2");
-let statsSection = document.querySelector(".our");
-let el = document.querySelector(".scrTop");
-let scol = document.querySelector(".scol");
-let started = false;
-
-let ourSkills = document.querySelector(".ourskills");
-let countspan = document.querySelectorAll(".count");
-let main = document.querySelectorAll(".main");
-
+let listVideoTime = document.querySelectorAll(".list-video li video");
+let videoSpan = document.querySelectorAll(".list-video li span");
 let videoTitle = document.querySelector(".show .show_title");
 let listVideo = document.querySelectorAll(".list-video li");
 let videoitem = document.querySelector(".show .timeVedio");
+let numb = document.querySelectorAll(".items-content h2");
 let videoPlay = document.querySelector(".show video");
 let realTime = document.querySelectorAll(".realtime");
+let ourSkills = document.querySelector(".ourskills");
+let countspan = document.querySelectorAll(".count");
+let statsSection = document.querySelector(".our");
 let videos = document.querySelector(".video");
+let main = document.querySelectorAll(".main");
+let el = document.querySelector(".scrTop");
+let scol = document.querySelector(".scol");
+let started = false;
+let start = false;
 
-let listVideoTime = document.querySelectorAll(".list-video li video");
-let videoSpan = document.querySelectorAll(".list-video li span");
 listVideoTime.forEach((tim, index) => {
   tim.addEventListener("loadedmetadata", () => {
     let duration = tim.duration;
@@ -87,7 +86,8 @@ function startCount(el) {
     }
   }, 2000 / goal);
 }
-function startCount(el) {
+// console.log(countspan);
+function Count(el) {
   let targ = el.dataset.conty;
   let int = setInterval(() => {
     el.textContent++;
@@ -128,10 +128,10 @@ window.onscroll = function () {
     main.forEach((el) => {
       el.style.width = "100%";
     });
-    if (!started) {
-      countspan.forEach((el) => startCount(el));
+    if (!start) {
+      countspan.forEach((el) => Count(el));
     }
-    started = true;
+    start = true;
     countspan.forEach((el) => {
       el.style.width = "50";
       el.style.opacity = "1";
