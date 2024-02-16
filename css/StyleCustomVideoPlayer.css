@@ -19,6 +19,23 @@ ol {
 a {
   text-decoration: none;
 }
+::-webkit-scrollbar {
+  width: 1vw;
+}
+::-webkit-scrollbar-track {
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  /* background-color: rgb(34, 137, 255); */
+  background: linear-gradient(
+    0deg,
+    rgb(34, 137, 255) 0%,
+    rgba(34, 137, 255, 0.15) 90%,
+    rgba(34, 137, 255, 0) 100%
+  );
+  border-radius: 10px;
+}
 /* End-Global-rules */
 /* Start-Properties */
 .containervideo.fullscreen {
@@ -92,7 +109,7 @@ a {
   left: 50%;
 }
 .bottom-controls .video-timeline .progress-area .progress-bar {
-  background-color: #2289ff;
+  background-color: hwb(212 13% 0%);
   position: relative;
   height: 100%;
   width: 0%;
@@ -164,15 +181,26 @@ a {
   box-shadow: 0px 0px 5px 0.5px rgb(0, 0, 0, 0.3);
   background-color: rgb(255, 255, 255);
   transition: opacity 0.5s;
-  border-radius: 10px;
+  border-radius: 5px;
   position: absolute;
-  overflow: scroll;
+  overflow-y: scroll;
   font-weight: 500;
   display: none;
   height: 160px;
   bottom: 100%;
-  left: -20%;
   opacity: 0;
+  left: -20%;
+}
+.playback-content .speed-options::-webkit-scrollbar {
+  width: 4px;
+}
+.playback-content .speed-options::-webkit-scrollbar-track {
+  background-color: rgb(255, 255, 255);
+  border-radius: 0 10px 10px 0;
+}
+.playback-content .speed-options::-webkit-scrollbar-thumb {
+  background-color: rgb(34, 137, 255);
+  border-radius: 10px;
 }
 .playback-content .speed-options li {
   transition: all 0.3s;
@@ -224,7 +252,6 @@ a {
   .playback-content .speed-options {
     transition: opacity 0.5s;
     border-radius: 5px;
-    overflow: scroll;
     font-weight: 500;
     height: 140px;
     display: none;
